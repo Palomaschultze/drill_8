@@ -1,0 +1,1057 @@
+{
+	"info": {
+		"_postman_id": "9081a784-0061-4a0e-9df0-3a2abd935f98",
+		"name": "drill_m8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27757206"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"firstName\": \"Mateo\",\r\n            \"lastName\": \"Díaz\",\r\n            \"email\": \"mateo.diaz@correo.com\",\r\n            \"password\": \"mateo123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ejemplo de creación de usuario",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"firstName\": \"Facundo\",\r\n            \"lastName\": \"Fernández\",\r\n            \"email\": \"facundo.fernandez@correo.com\",\r\n            \"password\": \"facundo123456\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-spMNcRuFj7+fyGDhqWnCwSWUle4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:20:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Usuario Facundo, con ID: 4 creado con éxito.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UserLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "mateo.diaz@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "mateo123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"signin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ejemplo de login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "mateo.diaz@correo.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "mateo123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13a-kLkUbWj8CTTqEHLLzwtVkio2uG4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:26:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Login correcto.\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjM5OTUsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzIwMzk1fQ.p4Olu_Plb3HKwZIUF_cHiWcSETK8RA_iB66hbcGPmTY\"\n}"
+						},
+						{
+							"name": "Ejemplo usuario no registrado",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "pablo@correo.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "kdjfn",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"signin"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-IIpuQc79Fldr//fsVZ6+tCok9QA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:34:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"Usuario no registrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Listar usuario 3",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "374"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"176-POxIN6H3VO47G7Nvm8rZMoS0zGM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:36:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"firstName\": \"Lucas\",\n        \"lastName\": \"Rojas\",\n        \"email\": \"lucas.rojas@correo.com\",\n        \"bootcamps\": [\n            {\n                \"id\": 3,\n                \"title\": \"Bootcamp Big Data, Inteligencia Artificial & Machine Learning\",\n                \"cue\": 18,\n                \"description\": \"Domina Data Science todo el ecosistema de lenguajes y herramientas de Big Data e integrarlos con modelos avanzados de Artificial Intelligence y Machine Learning\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Listar todos los usuarios",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1770"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6ea-U57RWYB2l6SlqBPojnreEXoO2JU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:35:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"firstName\": \"Mateo\",\n            \"lastName\": \"Díaz\",\n            \"email\": \"mateo.diaz@correo.com\",\n            \"bootcamps\": [\n                {\n                    \"id\": 1,\n                    \"title\": \"Introduciendo El Bootcamp De React.\",\n                    \"cue\": 10,\n                    \"description\": \"React es la librería más usada en JavaScript para el desarrollo de interfaces.\"\n                },\n                {\n                    \"id\": 2,\n                    \"title\": \"Bootcamp Desarrollo Web Full Stack\",\n                    \"cue\": 12,\n                    \"description\": \"Crearás aplicaciones web utilizando las tecnologías y lenguajes más actuales y populares como JavaScript, nodeJS, Angular, MongoDB, ExpressJS\"\n                },\n                {\n                    \"id\": 3,\n                    \"title\": \"Bootcamp Big Data, Inteligencia Artificial & Machine Learning\",\n                    \"cue\": 18,\n                    \"description\": \"Domina Data Science todo el ecosistema de lenguajes y herramientas de Big Data e integrarlos con modelos avanzados de Artificial Intelligence y Machine Learning\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"firstName\": \"Santiago\",\n            \"lastName\": \"Mejías\",\n            \"email\": \"santiago.mejias@correo.com\",\n            \"bootcamps\": [\n                {\n                    \"id\": 1,\n                    \"title\": \"Introduciendo El Bootcamp De React.\",\n                    \"cue\": 10,\n                    \"description\": \"React es la librería más usada en JavaScript para el desarrollo de interfaces.\"\n                },\n                {\n                    \"id\": 3,\n                    \"title\": \"Bootcamp Big Data, Inteligencia Artificial & Machine Learning\",\n                    \"cue\": 18,\n                    \"description\": \"Domina Data Science todo el ecosistema de lenguajes y herramientas de Big Data e integrarlos con modelos avanzados de Artificial Intelligence y Machine Learning\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"firstName\": \"Lucas\",\n            \"lastName\": \"Rojas\",\n            \"email\": \"lucas.rojas@correo.com\",\n            \"bootcamps\": [\n                {\n                    \"id\": 3,\n                    \"title\": \"Bootcamp Big Data, Inteligencia Artificial & Machine Learning\",\n                    \"cue\": 18,\n                    \"description\": \"Domina Data Science todo el ecosistema de lenguajes y herramientas de Big Data e integrarlos con modelos avanzados de Artificial Intelligence y Machine Learning\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"firstName\": \"Facundo\",\n            \"lastName\": \"Fernández\",\n            \"email\": \"facundo.fernandez@correo.com\",\n            \"bootcamps\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Put user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"firstName\": \"Mateo\",\r\n            \"lastName\": \"Perez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Actualizar usuario 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"firstName\": \"Pedro\",\r\n            \"lastName\": \"Sánchez\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-PfGoFE/oa91J0MVuv3816BZ2q3g\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:37:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": " Usuario con ID: 1 modificado exitosamente"
+						}
+					]
+				},
+				{
+					"name": "Eliminar por status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Eliminar usuario 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"status\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-pb660EIAbiu+YQ4SjNh8ip6KXgM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:37:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Usuario con ID: 1 eliminado con éxito"
+						}
+					]
+				},
+				{
+					"name": "Destruir usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/destroy/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"destroy",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bootcamps",
+			"item": [
+				{
+					"name": "Post bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"Introduciendo El Bootcamp De React.\",\r\n            \"cue\": 10,\r\n            \"description\": \"React es la librería más usada en JavaScript para el desarrollo de interfaces.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bootcamp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bootcamp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ejemplo de creación de bootcamp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"Bootcamp Big Data, Inteligencia Artificial & Machine Learning\",\r\n            \"cue\": 18,\r\n            \"description\": \"Domina Data Science todo el ecosistema de lenguajes y herramientas de Big Data e integrarlos con modelos avanzados de Artificial Intelligence y Machine Learning\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bootcamp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bootcamp"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-nrCMFHJsBP9n3INXDXE8iT7JIX0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:28:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Bootcamp Bootcamp Big Data, Inteligencia Artificial & Machine Learning, con ID: 3 creado con éxito.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"bootcampId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bootcamp/adduser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bootcamp",
+								"adduser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ejemplo de asociacion",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 1,\r\n  \"bootcampId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bootcamp/adduser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bootcamp",
+										"adduser"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"62-dw1MylGN2fGLEJz5Br3Bq282fcY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:31:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Usuario: Mateo, vinculado al bootcamp Introduciendo El Bootcamp De React.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Find by id bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTAzMjIzNjYsImRhdGEiOnsiaWQiOjEsImZpcnN0TmFtZSI6Ik1hdGVvIiwibGFzdE5hbWUiOiJEw61heiIsImVtYWlsIjoibWF0ZW8uZGlhekBjb3JyZW8uY29tIiwic3RhdHVzIjp0cnVlfSwiaWF0IjoxNjkwMzE4NzY2fQ.BAKb86unua1KH4H4lcxhdFXx10w4D5UczbIk_kmOgB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bootcamp/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bootcamp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find all bootcamp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bootcamp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bootcamp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Listar todos los bootcamps con sus usuarios",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bootcamp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bootcamp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1213"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4bd-QF4FwAIMonQ9XaDIykFnB85Q1p0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 21:38:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Introduciendo El Bootcamp De React.\",\n            \"cue\": 10,\n            \"description\": \"React es la librería más usada en JavaScript para el desarrollo de interfaces.\",\n            \"users\": [\n                {\n                    \"id\": 1,\n                    \"firstName\": \"Pedro\",\n                    \"lastName\": \"Sánchez\",\n                    \"email\": \"mateo.diaz@correo.com\"\n                },\n                {\n                    \"id\": 2,\n                    \"firstName\": \"Santiago\",\n                    \"lastName\": \"Mejías\",\n                    \"email\": \"santiago.mejias@correo.com\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Bootcamp Desarrollo Web Full Stack\",\n            \"cue\": 12,\n            \"description\": \"Crearás aplicaciones web utilizando las tecnologías y lenguajes más actuales y populares como JavaScript, nodeJS, Angular, MongoDB, ExpressJS\",\n            \"users\": [\n                {\n                    \"id\": 1,\n                    \"firstName\": \"Pedro\",\n                    \"lastName\": \"Sánchez\",\n                    \"email\": \"mateo.diaz@correo.com\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Bootcamp Big Data, Inteligencia Artificial & Machine Learning\",\n            \"cue\": 18,\n            \"description\": \"Domina Data Science todo el ecosistema de lenguajes y herramientas de Big Data e integrarlos con modelos avanzados de Artificial Intelligence y Machine Learning\",\n            \"users\": [\n                {\n                    \"id\": 1,\n                    \"firstName\": \"Pedro\",\n                    \"lastName\": \"Sánchez\",\n                    \"email\": \"mateo.diaz@correo.com\"\n                },\n                {\n                    \"id\": 2,\n                    \"firstName\": \"Santiago\",\n                    \"lastName\": \"Mejías\",\n                    \"email\": \"santiago.mejias@correo.com\"\n                },\n                {\n                    \"id\": 3,\n                    \"firstName\": \"Lucas\",\n                    \"lastName\": \"Rojas\",\n                    \"email\": \"lucas.rojas@correo.com\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
